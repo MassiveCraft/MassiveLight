@@ -1,0 +1,14 @@
+name: lightfixer
+version: 1.0.0
+description: Fixes light errors
+authors: ['Olof Cayorion Larsson']
+main: com.massivecraft.lightfixer.P
+load: STARTUP
+commands:
+    lightfixer:
+        description: fix light in the chunk you stand in
+        permission: lightfixer
+permissions:
+    lightfixer:
+        default: op
+        description: fix light in the chunk you stand in
