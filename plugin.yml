@@ -1,5 +1,5 @@
 name: lightfixer
-version: 1.0.0
+version: 1.0.1
 description: Fixes light errors
 authors: ['Olof Cayorion Larsson']
 main: com.massivecraft.lightfixer.P

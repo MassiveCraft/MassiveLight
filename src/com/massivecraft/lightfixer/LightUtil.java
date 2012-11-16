@@ -53,7 +53,7 @@ public class LightUtil
     {
         CraftWorld cworld = (CraftWorld)world;
         WorldServer worldServer = cworld.getHandle();
-        worldServer.v(x, y, z);
+        worldServer.z(x, y, z);
     }
     
     /**
