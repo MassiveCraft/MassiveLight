@@ -6,7 +6,7 @@ import java.util.List;
 import org.bukkit.Chunk;
 import org.bukkit.World;
 
-import com.massivecraft.mcore5.util.LightUtil;
+import com.massivecraft.mcore.util.LightUtil;
 
 public class ChunkWrap
 {
