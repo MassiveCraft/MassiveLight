@@ -36,7 +36,7 @@ public class P extends JavaPlugin implements Listener
         Player me = (Player)sender;
         Chunk chunk = me.getLocation().getChunk();
         
-        if (LightUtil.updateChunkLight(new ChunkWrap(chunk)))
+        if (new ChunkWrap(chunk).recalcLightLevel())
         {
             sender.sendMessage(ChatColor.GREEN.toString()+"Successfully updated all light in this chunk (:");
         }
@@ -62,7 +62,7 @@ public class P extends JavaPlugin implements Listener
                 continue;
             }
             
-            if (LightUtil.updateChunkLight(cw))
+            if (cw.recalcLightLevel())
             {
                 this.fixed.add(cw);
             }

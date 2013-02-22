@@ -6,6 +6,8 @@ import java.util.List;
 import org.bukkit.Chunk;
 import org.bukkit.World;
 
+import com.massivecraft.mcore5.util.LightUtil;
+
 public class ChunkWrap
 {
     //----------------------------------------------//
@@ -32,7 +34,7 @@ public class ChunkWrap
     }
     
     //----------------------------------------------//
-    // UTIL
+    // SURROUNDING
     //----------------------------------------------//
     
     public List<ChunkWrap> getSurrounding(boolean includeSelf)
@@ -58,6 +60,58 @@ public class ChunkWrap
         
         return ret;
     }
+    
+    /**
+     * Try to load the chunks around a certain chunk.
+     * No attempts to generate chunks will be made. If one of the chunks doesnt exist
+     * the operation will be canceled and false will be returned.
+     */
+    public boolean loadSurrounding(boolean includeSelf)
+    {
+        for (ChunkWrap othercw : this.getSurrounding(includeSelf))
+        {
+            if ( ! othercw.world.loadChunk(othercw.x, othercw.z, false))
+            {
+                return false;
+            }
+        }
+        return true;
+    }
+    
+    //----------------------------------------------//
+    // LIGHT LEVEL
+    //----------------------------------------------//
+    
+    public boolean recalcLightLevel()
+    {
+        if ( ! this.loadSurrounding(true))
+        {
+            return false;
+        }
+        
+        World world = this.world;
+        int xfrom = this.x * 16;
+        int xto = xfrom + 16;
+        int yfrom = 0;
+        int yto = this.world.getMaxHeight() - 1;
+        int zfrom = this.z * 16;
+        int zto = zfrom + 16;
+        
+        for (int x = xfrom; x <= xto; x++)
+        {
+            for (int y = yfrom; y <= yto; y++)
+            {
+                for (int z = zfrom; z <= zto; z++)
+                {
+                	LightUtil.recalcLightLevelAt(world, x, y, z);
+                }
+            }
+        }
+        
+        return true;
+    }
+    
+
     
     //----------------------------------------------//
     // COMPARISON

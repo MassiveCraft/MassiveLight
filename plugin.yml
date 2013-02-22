@@ -1,8 +1,8 @@
 name: lightfixer
 version: 1.0.1
 description: Fixes light errors
-authors: ['Olof Cayorion Larsson']
 main: com.massivecraft.lightfixer.P
+depend: [mcore5]
 load: STARTUP
 commands:
     lightfixer:
