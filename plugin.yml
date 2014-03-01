@@ -1,14 +1,53 @@
-name: lightfixer
-version: 1.0.1
-description: Fixes light errors
-main: com.massivecraft.lightfixer.P
-depend: [mcore]
 load: STARTUP
-commands:
-    lightfixer:
-        description: fix light in the chunk you stand in
-        permission: lightfixer
+main: com.massivecraft.lightfixer.LightFixer
+name: LightFixer
+version: 2.0.0
+website: http://massivecraft.com
+authors: [Cayorion]
+description: §eLightFixer is a plugin that fixes light errors. §aCayorion §efrom the minecraft server §aMassiveCraft §eis the lead programmer. Feel free to visit us at §bhttp://massivecraft.com
+depend: [mcore]
 permissions:
-    lightfixer:
-        default: op
-        description: fix light in the chunk you stand in
+# -------------------------------------------- #
+# THE REAL NODES
+# -------------------------------------------- #
+  lightfixer.basecommand: {description: use the LightFixer base command, default: false}
+  lightfixer.fix: {description: fix light in nearby chunks, default: false}
+  lightfixer.version: {description: see plugin version, default: false}
+# -------------------------------------------- #
+# STAR NOTATION
+# -------------------------------------------- #
+  lightfixer.*:
+    default: false
+    children:
+      lightfixer.basecommand: true
+      lightfixer.fix: true
+      lightfixer.version: true
+# -------------------------------------------- #
+# KITS
+# -------------------------------------------- #
+  lightfixer.kit.op:
+    default: op
+    children:
+      lightfixer.*: true
+  lightfixer.kit.rank3:
+    default: false
+    children:
+      lightfixer.kit.rank2: true
+  lightfixer.kit.rank2:
+    default: false
+    children:
+      lightfixer.kit.rank1: true
+      lightfixer.fix: true
+  lightfixer.kit.rank1:
+    default: false
+    children:
+      lightfixer.kit.rank0: true
+  lightfixer.kit.rank0:
+    default: false
+    children:
+      lightfixer.basecommand: true
+      lightfixer.version: true
+  lightfixer.kit.default:
+    default: true
+    children:
+      lightfixer.kit.rank0: true
