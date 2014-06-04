@@ -1,23 +1,23 @@
-package com.massivecraft.lightfixer.cmd;
+package com.massivecraft.massivelight.cmd;
 
 import org.bukkit.Chunk;
 import org.bukkit.World;
 
-import com.massivecraft.lightfixer.ChunkWrap;
-import com.massivecraft.lightfixer.Perm;
-import com.massivecraft.lightfixer.entity.MConf;
-import com.massivecraft.mcore.cmd.MCommand;
-import com.massivecraft.mcore.cmd.arg.ARInteger;
-import com.massivecraft.mcore.cmd.req.ReqHasPerm;
-import com.massivecraft.mcore.cmd.req.ReqIsPlayer;
+import com.massivecraft.massivecore.cmd.MassiveCommand;
+import com.massivecraft.massivecore.cmd.arg.ARInteger;
+import com.massivecraft.massivecore.cmd.req.ReqHasPerm;
+import com.massivecraft.massivecore.cmd.req.ReqIsPlayer;
+import com.massivecraft.massivelight.ChunkWrap;
+import com.massivecraft.massivelight.Perm;
+import com.massivecraft.massivelight.entity.MConf;
 
-public class CmdLightFixerFix extends MCommand
+public class CmdLightFix extends MassiveCommand
 {
 	// -------------------------------------------- //
 	// CONSTRUCT
 	// -------------------------------------------- //
 	
-	public CmdLightFixerFix()
+	public CmdLightFix()
 	{
 		// Aliases
 		this.addAliases("fix");

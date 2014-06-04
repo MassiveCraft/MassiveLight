@@ -1,4 +1,4 @@
-package com.massivecraft.lightfixer;
+package com.massivecraft.massivelight;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -6,7 +6,7 @@ import java.util.List;
 import org.bukkit.Chunk;
 import org.bukkit.World;
 
-import com.massivecraft.mcore.util.LightUtil;
+import com.massivecraft.massivecore.util.LightUtil;
 
 public class ChunkWrap
 {

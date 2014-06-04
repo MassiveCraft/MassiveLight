@@ -1,4 +1,4 @@
-package com.massivecraft.lightfixer;
+package com.massivecraft.massivelight;
 
 import java.util.HashSet;
 import java.util.Set;
@@ -9,8 +9,8 @@ import org.bukkit.event.EventPriority;
 import org.bukkit.event.world.ChunkPopulateEvent;
 import org.bukkit.plugin.Plugin;
 
-import com.massivecraft.lightfixer.entity.MConf;
-import com.massivecraft.mcore.EngineAbstract;
+import com.massivecraft.massivecore.EngineAbstract;
+import com.massivecraft.massivelight.entity.MConf;
 
 public class EngineGenfix extends EngineAbstract
 {
@@ -29,7 +29,7 @@ public class EngineGenfix extends EngineAbstract
 	@Override
 	public Plugin getPlugin()
 	{
-		return LightFixer.get();
+		return MassiveLight.get();
 	}
 	
 	// -------------------------------------------- //

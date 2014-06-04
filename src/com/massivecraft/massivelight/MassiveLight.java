@@ -1,26 +1,26 @@
-package com.massivecraft.lightfixer;
+package com.massivecraft.massivelight;
 
-import com.massivecraft.lightfixer.cmd.CmdLightFixer;
-import com.massivecraft.lightfixer.entity.MConfColl;
-import com.massivecraft.mcore.MPlugin;
+import com.massivecraft.massivecore.MassivePlugin;
+import com.massivecraft.massivelight.cmd.CmdLight;
+import com.massivecraft.massivelight.entity.MConfColl;
 
-public class LightFixer extends MPlugin
+public class MassiveLight extends MassivePlugin
 {
 	// -------------------------------------------- //
 	// INSTANCE & CONSTRUCT
 	// -------------------------------------------- //
 	
-	private static LightFixer i;
-	public static LightFixer get() { return i; }
-	public LightFixer() { LightFixer.i = this; }
+	private static MassiveLight i;
+	public static MassiveLight get() { return i; }
+	public MassiveLight() { MassiveLight.i = this; }
 	
 	// -------------------------------------------- //
 	// FIELDS
 	// -------------------------------------------- //
 	
 	// Commands
-	private CmdLightFixer cmdLightFixer;
-	public CmdLightFixer getCmdLightFixer() { return this.cmdLightFixer; }
+	private CmdLight cmdLight;
+	public CmdLight getCmdLight() { return this.cmdLight; }
 	
 	// -------------------------------------------- //
 	// OVERRIDE
@@ -35,8 +35,8 @@ public class LightFixer extends MPlugin
 		MConfColl.get().init();
 		
 		// Commands
-		this.cmdLightFixer = new CmdLightFixer();
-		this.cmdLightFixer.register();
+		this.cmdLight = new CmdLight();
+		this.cmdLight.register();
 		
 		// Engines
 		EngineGenfix.get().activate();

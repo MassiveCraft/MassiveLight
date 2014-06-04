@@ -1,9 +1,9 @@
-package com.massivecraft.lightfixer.entity;
+package com.massivecraft.massivelight.entity;
 
 import java.util.List;
 
-import com.massivecraft.mcore.store.Entity;
-import com.massivecraft.mcore.util.MUtil;
+import com.massivecraft.massivecore.store.Entity;
+import com.massivecraft.massivecore.util.MUtil;
 
 public class MConf extends Entity<MConf>
 {
@@ -19,7 +19,7 @@ public class MConf extends Entity<MConf>
 	// -------------------------------------------- //
 	
 	// Aliases
-	public List<String> aliasesLightFixer = MUtil.list("lightfixer", "lightfix", "lf");
+	public List<String> aliasesLight = MUtil.list("light", "massivelight");
 	
 	// Other
 	public boolean genfix = true;

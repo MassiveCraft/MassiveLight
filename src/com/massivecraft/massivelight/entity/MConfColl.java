@@ -1,10 +1,10 @@
-package com.massivecraft.lightfixer.entity;
+package com.massivecraft.massivelight.entity;
 
-import com.massivecraft.lightfixer.Const;
-import com.massivecraft.lightfixer.LightFixer;
-import com.massivecraft.mcore.MCore;
-import com.massivecraft.mcore.store.Coll;
-import com.massivecraft.mcore.store.MStore;
+import com.massivecraft.massivecore.MassiveCore;
+import com.massivecraft.massivecore.store.Coll;
+import com.massivecraft.massivecore.store.MStore;
+import com.massivecraft.massivelight.Const;
+import com.massivecraft.massivelight.MassiveLight;
 
 public class MConfColl extends Coll<MConf>
 {
@@ -16,7 +16,7 @@ public class MConfColl extends Coll<MConf>
 	public static MConfColl get() { return i; }
 	private MConfColl()
 	{
-		super(Const.COLLECTION_MCONF, MConf.class, MStore.getDb(), LightFixer.get());
+		super(Const.COLLECTION_MCONF, MConf.class, MStore.getDb(), MassiveLight.get());
 	}
 	
 	// -------------------------------------------- //
@@ -28,7 +28,7 @@ public class MConfColl extends Coll<MConf>
 	{
 		super.init();
 		
-		MConf.i = this.get(MCore.INSTANCE, true);
+		MConf.i = this.get(MassiveCore.INSTANCE, true);
 	}
 	
 }

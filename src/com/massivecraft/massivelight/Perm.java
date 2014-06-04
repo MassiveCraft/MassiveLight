@@ -1,8 +1,8 @@
-package com.massivecraft.lightfixer;
+package com.massivecraft.massivelight;
 
 import org.bukkit.permissions.Permissible;
 
-import com.massivecraft.mcore.util.PermUtil;
+import com.massivecraft.massivecore.util.PermUtil;
 
 public enum Perm
 {
@@ -29,7 +29,7 @@ public enum Perm
 	
 	Perm(String permissionNode)
 	{
-		this.node = "lightfixer."+permissionNode;
+		this.node = "massivelight."+permissionNode;
 	}
 	
 	// -------------------------------------------- //

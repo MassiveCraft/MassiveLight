@@ -1,53 +1,53 @@
 load: STARTUP
-main: com.massivecraft.lightfixer.LightFixer
-name: LightFixer
+main: com.massivecraft.massivelight.MassiveLight
+name: MassiveLight
 version: 2.0.0
 website: http://massivecraft.com
 authors: [Cayorion]
-description: §eLightFixer is a plugin that fixes light errors. §aCayorion §efrom the minecraft server §aMassiveCraft §eis the lead programmer. Feel free to visit us at §bhttp://massivecraft.com
-depend: [mcore]
+description: §eMassiveLight is a plugin that fixes light errors. §aCayorion §efrom the minecraft server §aMassiveCraft §eis the lead programmer. Feel free to visit us at §bhttp://massivecraft.com
+depend: [MassiveCore]
 permissions:
 # -------------------------------------------- #
 # THE REAL NODES
 # -------------------------------------------- #
-  lightfixer.basecommand: {description: use the LightFixer base command, default: false}
-  lightfixer.fix: {description: fix light in nearby chunks, default: false}
-  lightfixer.version: {description: see plugin version, default: false}
+  massivelight.basecommand: {description: use the MassiveLight base command, default: false}
+  massivelight.fix: {description: fix light in nearby chunks, default: false}
+  massivelight.version: {description: see plugin version, default: false}
 # -------------------------------------------- #
 # STAR NOTATION
 # -------------------------------------------- #
-  lightfixer.*:
+  massivelight.*:
     default: false
     children:
-      lightfixer.basecommand: true
-      lightfixer.fix: true
-      lightfixer.version: true
+      massivelight.basecommand: true
+      massivelight.fix: true
+      massivelight.version: true
 # -------------------------------------------- #
 # KITS
 # -------------------------------------------- #
-  lightfixer.kit.op:
+  massivelight.kit.op:
     default: op
     children:
-      lightfixer.*: true
-  lightfixer.kit.rank3:
+      massivelight.*: true
+  massivelight.kit.rank3:
     default: false
     children:
-      lightfixer.kit.rank2: true
-  lightfixer.kit.rank2:
+      massivelight.kit.rank2: true
+  massivelight.kit.rank2:
     default: false
     children:
-      lightfixer.kit.rank1: true
-      lightfixer.fix: true
-  lightfixer.kit.rank1:
+      massivelight.kit.rank1: true
+      massivelight.fix: true
+  massivelight.kit.rank1:
     default: false
     children:
-      lightfixer.kit.rank0: true
-  lightfixer.kit.rank0:
+      massivelight.kit.rank0: true
+  massivelight.kit.rank0:
     default: false
     children:
-      lightfixer.basecommand: true
-      lightfixer.version: true
-  lightfixer.kit.default:
+      massivelight.basecommand: true
+      massivelight.version: true
+  massivelight.kit.default:
     default: true
     children:
-      lightfixer.kit.rank0: true
+      massivelight.kit.rank0: true
