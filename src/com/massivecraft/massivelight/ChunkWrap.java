@@ -107,6 +107,9 @@ public class ChunkWrap
 			}
 		}
 		
+		// Send update data to nearby players.
+		world.refreshChunk(this.x, this.z);
+		
 		return true;
 	}
 	
