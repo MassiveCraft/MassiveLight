@@ -36,7 +36,7 @@ public class MassiveLight extends MassivePlugin
 		
 		// Commands
 		this.cmdLight = new CmdLight();
-		this.cmdLight.register();
+		this.cmdLight.register(this);
 		
 		// Engines
 		EngineGenfix.get().activate();
