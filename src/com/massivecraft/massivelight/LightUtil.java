@@ -1,26 +1,26 @@
 package com.massivecraft.massivelight;
 
-import net.minecraft.server.v1_7_R4.WorldServer;
+import net.minecraft.server.v1_8_R1.BlockPosition;
+import net.minecraft.server.v1_8_R1.WorldServer;
 
 import org.bukkit.World;
 import org.bukkit.block.Block;
-import org.bukkit.craftbukkit.v1_7_R4.CraftWorld;
+import org.bukkit.craftbukkit.v1_8_R1.CraftWorld;
 
 /**
  * Find the method by going through CraftBlock.setTypeId()
+ * It should be located in NMS.World and looks something like this:
  * The method should look something like this:
- * 
  *
-    public boolean t(int i, int j, int k) {
-        boolean flag = false;
-
-        if (!this.worldProvider.g) {
-            flag |= this.c(EnumSkyBlock.SKY, i, j, k);
-        }
-
-        flag |= this.c(EnumSkyBlock.BLOCK, i, j, k);
-        return flag;
+  public boolean x(BlockPosition blockposition)
+  {
+    boolean flag = false;
+    if (!this.worldProvider.o()) {
+      flag |= c(EnumSkyBlock.SKY, blockposition);
     }
+    flag |= c(EnumSkyBlock.BLOCK, blockposition);
+    return flag;
+  }
  * 
  */
 public class LightUtil
@@ -40,7 +40,8 @@ public class LightUtil
 	{
 		CraftWorld cworld = (CraftWorld)world;
 		WorldServer worldServer = cworld.getHandle();
-		worldServer.t(x, y, z);
+		BlockPosition blockPosition = new BlockPosition(x, y, z);
+		worldServer.x(blockPosition);
 	}
 	
 }
