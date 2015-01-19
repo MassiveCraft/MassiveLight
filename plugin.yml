@@ -1,4 +1,3 @@
-load: STARTUP
 main: com.massivecraft.massivelight.MassiveLight
 name: MassiveLight
 version: 2.0.0
@@ -6,6 +5,7 @@ website: http://massivecraft.com
 authors: [Cayorion]
 description: §eMassiveLight is a plugin that fixes light errors. §aCayorion §efrom the minecraft server §aMassiveCraft §eis the lead programmer. Feel free to visit us at §bhttp://massivecraft.com
 depend: [MassiveCore]
+load: startup
 permissions:
 # -------------------------------------------- #
 # THE REAL NODES
