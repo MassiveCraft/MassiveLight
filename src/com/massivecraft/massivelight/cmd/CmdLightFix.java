@@ -4,6 +4,7 @@ import org.bukkit.Chunk;
 import org.bukkit.World;
 
 import com.massivecraft.massivecore.cmd.MassiveCommand;
+import com.massivecraft.massivecore.cmd.MassiveCommandException;
 import com.massivecraft.massivecore.cmd.arg.ARInteger;
 import com.massivecraft.massivecore.cmd.req.ReqHasPerm;
 import com.massivecraft.massivecore.cmd.req.ReqIsPlayer;
@@ -35,11 +36,10 @@ public class CmdLightFix extends MassiveCommand
 	// -------------------------------------------- //
 	
 	@Override
-	public void perform()
+	public void perform() throws MassiveCommandException
 	{
 		// Args
 		Integer radius = this.arg(0, ARInteger.get(), 0);
-		if (radius == null) return;
 		if (radius < 0)
 		{
 			msg("<b>Radius may not be a negative value.");
