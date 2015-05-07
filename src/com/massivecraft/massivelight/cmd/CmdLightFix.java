@@ -24,7 +24,7 @@ public class CmdLightFix extends MassiveCommand
 		this.addAliases("fix");
 		
 		// Args
-		this.addOptionalArg("radius", "0");
+		this.addArg(ARInteger.get(), "radius", "0");
 		
 		// Requirements
 		this.addRequirements(ReqHasPerm.get(Perm.FIX.node));
@@ -39,7 +39,7 @@ public class CmdLightFix extends MassiveCommand
 	public void perform() throws MassiveException
 	{
 		// Args
-		Integer radius = this.arg(0, ARInteger.get(), 0);
+		int radius = this.readArg(0);
 		if (radius < 0)
 		{
 			msg("<b>Radius may not be a negative value.");
