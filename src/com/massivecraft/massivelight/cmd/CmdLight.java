@@ -2,7 +2,6 @@ package com.massivecraft.massivelight.cmd;
 
 import java.util.List;
 
-import com.massivecraft.massivecore.cmd.HelpCommand;
 import com.massivecraft.massivecore.cmd.MassiveCommand;
 import com.massivecraft.massivecore.cmd.VersionCommand;
 import com.massivecraft.massivecore.cmd.req.ReqHasPerm;
@@ -26,7 +25,6 @@ public class CmdLight extends MassiveCommand
 	public CmdLight()
 	{
 		// Add SubCommands
-		this.addSubCommand(HelpCommand.get());
 		this.addSubCommand(this.cmdLightFix);
 		this.addSubCommand(this.cmdLightVersion);
 		
