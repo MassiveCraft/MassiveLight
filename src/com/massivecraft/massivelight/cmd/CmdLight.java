@@ -24,9 +24,9 @@ public class CmdLight extends MassiveCommand
 	
 	public CmdLight()
 	{
-		// Add SubCommands
-		this.addSubCommand(this.cmdLightFix);
-		this.addSubCommand(this.cmdLightVersion);
+		// Children
+		this.addChild(this.cmdLightFix);
+		this.addChild(this.cmdLightVersion);
 		
 		// Requirements
 		this.addRequirements(ReqHasPerm.get(Perm.BASECOMMAND.node));

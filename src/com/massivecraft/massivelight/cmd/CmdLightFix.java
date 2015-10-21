@@ -5,9 +5,9 @@ import org.bukkit.World;
 
 import com.massivecraft.massivecore.MassiveException;
 import com.massivecraft.massivecore.cmd.MassiveCommand;
-import com.massivecraft.massivecore.cmd.arg.ARInteger;
 import com.massivecraft.massivecore.cmd.req.ReqHasPerm;
 import com.massivecraft.massivecore.cmd.req.ReqIsPlayer;
+import com.massivecraft.massivecore.cmd.type.TypeInteger;
 import com.massivecraft.massivelight.ChunkWrap;
 import com.massivecraft.massivelight.Perm;
 import com.massivecraft.massivelight.entity.MConf;
@@ -23,8 +23,8 @@ public class CmdLightFix extends MassiveCommand
 		// Aliases
 		this.addAliases("fix");
 		
-		// Args
-		this.addArg(ARInteger.get(), "radius", "0");
+		// Parameters
+		this.addParameter(TypeInteger.get(), "radius", "0");
 		
 		// Requirements
 		this.addRequirements(ReqHasPerm.get(Perm.FIX.node));
