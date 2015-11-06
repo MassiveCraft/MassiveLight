@@ -4,10 +4,10 @@ import org.bukkit.Chunk;
 import org.bukkit.World;
 
 import com.massivecraft.massivecore.MassiveException;
-import com.massivecraft.massivecore.cmd.MassiveCommand;
-import com.massivecraft.massivecore.cmd.req.ReqHasPerm;
-import com.massivecraft.massivecore.cmd.req.ReqIsPlayer;
-import com.massivecraft.massivecore.cmd.type.TypeInteger;
+import com.massivecraft.massivecore.command.MassiveCommand;
+import com.massivecraft.massivecore.command.requirement.RequirementHasPerm;
+import com.massivecraft.massivecore.command.requirement.RequirementIsPlayer;
+import com.massivecraft.massivecore.command.type.primitive.TypeInteger;
 import com.massivecraft.massivelight.ChunkWrap;
 import com.massivecraft.massivelight.Perm;
 import com.massivecraft.massivelight.entity.MConf;
@@ -27,8 +27,8 @@ public class CmdLightFix extends MassiveCommand
 		this.addParameter(TypeInteger.get(), "radius", "0");
 		
 		// Requirements
-		this.addRequirements(ReqHasPerm.get(Perm.FIX.node));
-		this.addRequirements(ReqIsPlayer.get());
+		this.addRequirements(RequirementHasPerm.get(Perm.FIX.node));
+		this.addRequirements(RequirementIsPlayer.get());
 	}
 	
 	// -------------------------------------------- //

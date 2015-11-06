@@ -2,9 +2,9 @@ package com.massivecraft.massivelight.cmd;
 
 import java.util.List;
 
-import com.massivecraft.massivecore.cmd.MassiveCommand;
-import com.massivecraft.massivecore.cmd.VersionCommand;
-import com.massivecraft.massivecore.cmd.req.ReqHasPerm;
+import com.massivecraft.massivecore.command.MassiveCommand;
+import com.massivecraft.massivecore.command.VersionCommand;
+import com.massivecraft.massivecore.command.requirement.RequirementHasPerm;
 import com.massivecraft.massivelight.MassiveLight;
 import com.massivecraft.massivelight.Perm;
 import com.massivecraft.massivelight.entity.MConf;
@@ -29,7 +29,7 @@ public class CmdLight extends MassiveCommand
 		this.addChild(this.cmdLightVersion);
 		
 		// Requirements
-		this.addRequirements(ReqHasPerm.get(Perm.BASECOMMAND.node));
+		this.addRequirements(RequirementHasPerm.get(Perm.BASECOMMAND.node));
 	}
 	
 	// -------------------------------------------- //
