@@ -12,6 +12,13 @@ import com.massivecraft.massivelight.entity.MConf;
 public class CmdLight extends MassiveCommand
 {
 	// -------------------------------------------- //
+	// INSTANCE
+	// -------------------------------------------- //
+	
+	private static CmdLight i = new CmdLight();
+	public static CmdLight get() { return i; }
+	
+	// -------------------------------------------- //
 	// FIELDS
 	// -------------------------------------------- //
 	

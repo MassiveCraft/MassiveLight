@@ -7,12 +7,11 @@ import org.bukkit.Chunk;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.EventPriority;
 import org.bukkit.event.world.ChunkPopulateEvent;
-import org.bukkit.plugin.Plugin;
 
-import com.massivecraft.massivecore.EngineAbstract;
+import com.massivecraft.massivecore.Engine;
 import com.massivecraft.massivelight.entity.MConf;
 
-public class EngineGenfix extends EngineAbstract
+public class EngineGenfix extends Engine
 {
 	// -------------------------------------------- //
 	// INSTANCE & CONSTRUCT
@@ -20,17 +19,6 @@ public class EngineGenfix extends EngineAbstract
 	
 	private static EngineGenfix i = new EngineGenfix();
 	public static EngineGenfix get() { return i; }
-	public EngineGenfix() {}
-	
-	// -------------------------------------------- //
-	// OVERRIDE
-	// -------------------------------------------- //
-	
-	@Override
-	public Plugin getPlugin()
-	{
-		return MassiveLight.get();
-	}
 	
 	// -------------------------------------------- //
 	// FIELDS

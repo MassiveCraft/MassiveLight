@@ -15,33 +15,23 @@ public class MassiveLight extends MassivePlugin
 	public MassiveLight() { MassiveLight.i = this; }
 	
 	// -------------------------------------------- //
-	// FIELDS
-	// -------------------------------------------- //
-	
-	// Commands
-	private CmdLight cmdLight;
-	public CmdLight getCmdLight() { return this.cmdLight; }
-	
-	// -------------------------------------------- //
 	// OVERRIDE
 	// -------------------------------------------- //
 	
 	@Override
-	public void onEnable()
+	public void onEnableInner()
 	{
-		if ( ! preEnable()) return;
+		// Active
+		this.activate(
+			// Coll
+			MConfColl.get(),
 		
-		// Initialize Database
-		MConfColl.get().init();
-		
-		// Commands
-		this.cmdLight = new CmdLight();
-		this.cmdLight.register(this);
-		
-		// Engines
-		EngineGenfix.get().activate();
-				
-		postEnable();
+			// Engine
+			EngineGenfix.get(),
+			
+			// Command
+			CmdLight.get()
+		);
 	}   
 	
 }
