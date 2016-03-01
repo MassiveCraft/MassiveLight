@@ -1,11 +1,11 @@
 package com.massivecraft.massivelight;
 
-import net.minecraft.server.v1_8_R3.BlockPosition;
-import net.minecraft.server.v1_8_R3.WorldServer;
+import net.minecraft.server.v1_9_R1.BlockPosition;
+import net.minecraft.server.v1_9_R1.WorldServer;
 
 import org.bukkit.World;
 import org.bukkit.block.Block;
-import org.bukkit.craftbukkit.v1_8_R3.CraftWorld;
+import org.bukkit.craftbukkit.v1_9_R1.CraftWorld;
 
 /**
  * Find the method by going through CraftBlock.setTypeId()
@@ -41,7 +41,7 @@ public class LightUtil
 		CraftWorld cworld = (CraftWorld)world;
 		WorldServer worldServer = cworld.getHandle();
 		BlockPosition blockPosition = new BlockPosition(x, y, z);
-		worldServer.x(blockPosition);
+		worldServer.w(blockPosition);
 	}
 	
 }
