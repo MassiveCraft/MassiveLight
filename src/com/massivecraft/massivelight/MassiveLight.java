@@ -24,13 +24,13 @@ public class MassiveLight extends MassivePlugin
 		// Active
 		this.activate(
 			// Coll
-			MConfColl.get(),
+			MConfColl.class,
 		
 			// Engine
-			EngineGenfix.get(),
+			EngineGenfix.class,
 			
 			// Command
-			CmdLight.get()
+			CmdLight.class
 		);
 	}   
 	
