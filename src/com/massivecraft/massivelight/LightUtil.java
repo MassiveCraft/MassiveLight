@@ -1,18 +1,18 @@
 package com.massivecraft.massivelight;
 
-import net.minecraft.server.v1_9_R1.BlockPosition;
-import net.minecraft.server.v1_9_R1.WorldServer;
+import net.minecraft.server.v1_9_R2.BlockPosition;
+import net.minecraft.server.v1_9_R2.WorldServer;
 
 import org.bukkit.World;
 import org.bukkit.block.Block;
-import org.bukkit.craftbukkit.v1_9_R1.CraftWorld;
+import org.bukkit.craftbukkit.v1_9_R2.CraftWorld;
 
 /**
  * Find the method by going through CraftBlock.setTypeId()
  * It should be located in NMS.World and looks something like this:
  * The method should look something like this:
  *
-  public boolean x(BlockPosition blockposition)
+  public boolean w(BlockPosition blockposition)
   {
     boolean flag = false;
     if (!this.worldProvider.o()) {
