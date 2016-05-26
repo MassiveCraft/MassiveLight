@@ -2,9 +2,10 @@ package com.massivecraft.massivelight;
 
 import org.bukkit.permissions.Permissible;
 
+import com.massivecraft.massivecore.Identified;
 import com.massivecraft.massivecore.util.PermissionUtil;
 
-public enum Perm
+public enum Perm implements Identified
 {
 	// -------------------------------------------- //
 	// ENUM
@@ -21,7 +22,8 @@ public enum Perm
 	// FIELDS
 	// -------------------------------------------- //
 	
-	public final String node;
+	private final String id;
+	@Override public String getId() { return this.id; }
 	
 	// -------------------------------------------- //
 	// CONSTRUCT
@@ -29,7 +31,7 @@ public enum Perm
 	
 	Perm(String permissionNode)
 	{
-		this.node = "massivelight."+permissionNode;
+		this.id = PermissionUtil.createPermissionId(MassiveLight.get(), this);
 	}
 	
 	// -------------------------------------------- //
@@ -38,7 +40,7 @@ public enum Perm
 	
 	public boolean has(Permissible permissible, boolean informSenderIfNot)
 	{
-		return PermissionUtil.hasPermission(permissible, this.node, informSenderIfNot);
+		return PermissionUtil.hasPermission(permissible, this.id, informSenderIfNot);
 	}
 	
 	public boolean has(Permissible permissible)

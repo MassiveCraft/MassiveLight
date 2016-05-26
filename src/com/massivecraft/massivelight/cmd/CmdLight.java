@@ -23,7 +23,7 @@ public class CmdLight extends MassiveCommand
 	// -------------------------------------------- //
 	
 	public CmdLightFix cmdLightFix = new CmdLightFix();
-	public MassiveCommandVersion cmdLightVersion = new MassiveCommandVersion(MassiveLight.get(), Perm.VERSION.node, "v", "version");
+	public MassiveCommandVersion cmdLightVersion = new MassiveCommandVersion(MassiveLight.get()).setAliases("v", "version").addRequirements(RequirementHasPerm.get(Perm.VERSION));
 	
 	// -------------------------------------------- //
 	// CONSTRUCT
@@ -36,7 +36,7 @@ public class CmdLight extends MassiveCommand
 		this.addChild(this.cmdLightVersion);
 		
 		// Requirements
-		this.addRequirements(RequirementHasPerm.get(Perm.BASECOMMAND.node));
+		this.addRequirements(RequirementHasPerm.get(Perm.BASECOMMAND));
 	}
 	
 	// -------------------------------------------- //

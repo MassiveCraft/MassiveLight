@@ -27,7 +27,7 @@ public class CmdLightFix extends MassiveCommand
 		this.addParameter(TypeInteger.get(), "radius", "0");
 		
 		// Requirements
-		this.addRequirements(RequirementHasPerm.get(Perm.FIX.node));
+		this.addRequirements(RequirementHasPerm.get(Perm.FIX));
 		this.addRequirements(RequirementIsPlayer.get());
 	}
 	
