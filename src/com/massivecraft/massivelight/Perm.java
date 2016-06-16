@@ -11,9 +11,9 @@ public enum Perm implements Identified
 	// ENUM
 	// -------------------------------------------- //
 	
-	BASECOMMAND("basecommand"),
-	FIX("fix"),
-	VERSION("version")
+	BASECOMMAND,
+	FIX,
+	VERSION,
 	
 	// END OF LIST
 	;
@@ -29,7 +29,7 @@ public enum Perm implements Identified
 	// CONSTRUCT
 	// -------------------------------------------- //
 	
-	Perm(String permissionNode)
+	Perm()
 	{
 		this.id = PermissionUtil.createPermissionId(MassiveLight.get(), this);
 	}
@@ -38,14 +38,14 @@ public enum Perm implements Identified
 	// HAS
 	// -------------------------------------------- //
 	
-	public boolean has(Permissible permissible, boolean informSenderIfNot)
+	public boolean has(Permissible permissible, boolean verboose)
 	{
-		return PermissionUtil.hasPermission(permissible, this.id, informSenderIfNot);
+		return PermissionUtil.hasPermission(permissible, this, verboose);
 	}
 	
 	public boolean has(Permissible permissible)
 	{
-		return has(permissible, false);
+		return PermissionUtil.hasPermission(permissible, this);
 	}
 	
 }
