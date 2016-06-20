@@ -1,11 +1,11 @@
 package com.massivecraft.massivelight;
 
-import net.minecraft.server.v1_9_R2.BlockPosition;
-import net.minecraft.server.v1_9_R2.WorldServer;
+import net.minecraft.server.v1_10_R1.BlockPosition;
+import net.minecraft.server.v1_10_R1.WorldServer;
 
 import org.bukkit.World;
 import org.bukkit.block.Block;
-import org.bukkit.craftbukkit.v1_9_R2.CraftWorld;
+import org.bukkit.craftbukkit.v1_10_R1.CraftWorld;
 
 /**
  * Find the method by going through CraftBlock.setTypeId()
