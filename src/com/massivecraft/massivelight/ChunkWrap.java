@@ -1,10 +1,11 @@
 package com.massivecraft.massivelight;
 
-import java.util.ArrayList;
-import java.util.List;
-
+import com.massivecraft.massivelight.nms.NmsMassiveLight;
 import org.bukkit.Chunk;
 import org.bukkit.World;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class ChunkWrap
 {
@@ -102,7 +103,7 @@ public class ChunkWrap
 			{
 				for (int z = zfrom; z <= zto; z++)
 				{
-					LightUtil.recalcLightLevelAt(world, x, y, z);
+					NmsMassiveLight.get().updateLightLevelAt(world, x, y, z);
 				}
 			}
 		}

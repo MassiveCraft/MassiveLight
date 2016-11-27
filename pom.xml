@@ -29,6 +29,10 @@
         <!-- NMS -->
         <dependency>
             <groupId>org.spigotmc.spigot</groupId>
+            <artifactId>111R1</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.spigotmc.spigot</groupId>
             <artifactId>110R1</artifactId>
         </dependency>
         <!-- MassiveCore -->
