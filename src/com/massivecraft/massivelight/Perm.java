@@ -14,6 +14,7 @@ public enum Perm implements Identified
 	BASECOMMAND,
 	FIX,
 	VERSION,
+	CONFIG,
 	
 	// END OF LIST
 	;
