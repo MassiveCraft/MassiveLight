@@ -5,7 +5,6 @@ import java.util.List;
 import com.massivecraft.massivecore.command.MassiveCommand;
 import com.massivecraft.massivecore.command.MassiveCommandVersion;
 import com.massivecraft.massivecore.command.requirement.RequirementHasPerm;
-import com.massivecraft.massivelight.MassiveLight;
 import com.massivecraft.massivelight.Perm;
 import com.massivecraft.massivelight.entity.MConf;
 
@@ -23,8 +22,8 @@ public class CmdLight extends MassiveCommand
 	// -------------------------------------------- //
 	
 	public CmdLightFix cmdLightFix = new CmdLightFix();
-	public MassiveCommandVersion cmdLightVersion = new MassiveCommandVersion(MassiveLight.get()).setAliases("v", "version").addRequirements(RequirementHasPerm.get(Perm.VERSION));
 	public CmdLightConfig cmdLightConfig = new CmdLightConfig();
+	public MassiveCommandVersion cmdLightVersion = new CmdLightVersion();
 	
 	// -------------------------------------------- //
 	// CONSTRUCT

@@ -23,6 +23,8 @@ public class MConf extends Entity<MConf>
 	// Aliases
 	public List<String> aliasesLight = MUtil.list("light", "massivelight");
 	public List<String> aliasesLightConfig = MUtil.list("config");
+	public List<String> aliasesLightFix = MUtil.list("fix");
+	public List<String> aliasesLightVersion = MUtil.list("v", "version");
 	
 	// Other
 	public boolean genfix = true;

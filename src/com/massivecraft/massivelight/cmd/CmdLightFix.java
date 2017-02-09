@@ -12,6 +12,8 @@ import com.massivecraft.massivelight.ChunkWrap;
 import com.massivecraft.massivelight.Perm;
 import com.massivecraft.massivelight.entity.MConf;
 
+import java.util.List;
+
 public class CmdLightFix extends MassiveCommand
 {
 	// -------------------------------------------- //
@@ -20,9 +22,6 @@ public class CmdLightFix extends MassiveCommand
 	
 	public CmdLightFix()
 	{
-		// Aliases
-		this.addAliases("fix");
-		
 		// Parameters
 		this.addParameter(TypeInteger.get(), "radius", "0");
 		
@@ -34,6 +33,12 @@ public class CmdLightFix extends MassiveCommand
 	// -------------------------------------------- //
 	// OVERRIDE
 	// -------------------------------------------- //
+	
+	@Override
+	public List<String> getAliases()
+	{
+		return MConf.get().aliasesLightFix;
+	}
 	
 	@Override
 	public void perform() throws MassiveException
