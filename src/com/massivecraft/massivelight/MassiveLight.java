@@ -2,6 +2,7 @@ package com.massivecraft.massivelight;
 
 import com.massivecraft.massivecore.MassivePlugin;
 import com.massivecraft.massivelight.cmd.CmdLight;
+import com.massivecraft.massivelight.engine.EngineGenfix;
 import com.massivecraft.massivelight.entity.MConfColl;
 import com.massivecraft.massivelight.nms.NmsMassiveLight;
 

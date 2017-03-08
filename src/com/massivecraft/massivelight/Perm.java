@@ -13,8 +13,8 @@ public enum Perm implements Identified
 	
 	BASECOMMAND,
 	FIX,
-	VERSION,
 	CONFIG,
+	VERSION,
 	
 	// END OF LIST
 	;

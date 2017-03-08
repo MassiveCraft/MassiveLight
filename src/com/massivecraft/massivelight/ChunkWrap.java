@@ -1,11 +1,14 @@
 package com.massivecraft.massivelight;
 
-import com.massivecraft.massivelight.nms.NmsMassiveLight;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Objects;
+
 import org.bukkit.Chunk;
 import org.bukkit.World;
 
-import java.util.ArrayList;
-import java.util.List;
+import com.massivecraft.massivecore.util.MUtil;
+import com.massivecraft.massivelight.nms.NmsMassiveLight;
 
 public class ChunkWrap
 {
@@ -13,9 +16,14 @@ public class ChunkWrap
 	// FIELDS
 	// -------------------------------------------- //
 	
-	public World world;
-	public int x;
-	public int z;
+	private World world;
+	public World getWorld() { return this.world; }
+	
+	private int x;
+	public int getX() { return this.x; }
+	
+	private int z;
+	public int getZ() { return this.z; }
 	
 	// -------------------------------------------- //
 	// CONSTRUCTORS
@@ -40,11 +48,11 @@ public class ChunkWrap
 	public List<ChunkWrap> getSurrounding(boolean includeSelf)
 	{
 		List<ChunkWrap> ret = new ArrayList<ChunkWrap>();
-		World world = this.world;
-		int xfrom = this.x - 1;
-		int xto = this.x + 1;
-		int zfrom = this.z - 1;
-		int zto = this.z + 1;
+		World world = this.getWorld();
+		int xfrom = this.getX() - 1;
+		int xto = this.getX() + 1;
+		int zfrom = this.getZ() - 1;
+		int zto = this.getZ() + 1;
 		for (int x = xfrom; x <= xto; x++)
 		{
 			for (int z = zfrom; z <= zto; z++)
@@ -53,10 +61,7 @@ public class ChunkWrap
 			}
 		}
 		
-		if ( ! includeSelf)
-		{
-			ret.remove(this);
-		}
+		if (!includeSelf) ret.remove(this);
 		
 		return ret;
 	}
@@ -70,10 +75,7 @@ public class ChunkWrap
 	{
 		for (ChunkWrap othercw : this.getSurrounding(includeSelf))
 		{
-			if ( ! othercw.world.loadChunk(othercw.x, othercw.z, false))
-			{
-				return false;
-			}
+			if (!othercw.getWorld().loadChunk(othercw.getX(), othercw.getZ(), false)) return false;
 		}
 		return true;
 	}
@@ -84,17 +86,14 @@ public class ChunkWrap
 	
 	public boolean recalcLightLevel()
 	{
-		if ( ! this.loadSurrounding(true))
-		{
-			return false;
-		}
+		if (!this.loadSurrounding(true)) return false;
 		
-		World world = this.world;
-		int xfrom = this.x * 16;
+		World world = this.getWorld();
+		int xfrom = this.getX() * 16;
 		int xto = xfrom + 16;
 		int yfrom = 0;
-		int yto = this.world.getMaxHeight() - 1;
-		int zfrom = this.z * 16;
+		int yto = this.getWorld().getMaxHeight() - 1;
+		int zfrom = this.getZ() * 16;
 		int zto = zfrom + 16;
 		
 		for (int x = xfrom; x <= xto; x++)
@@ -109,7 +108,7 @@ public class ChunkWrap
 		}
 		
 		// Send update data to nearby players.
-		world.refreshChunk(this.x, this.z);
+		world.refreshChunk(this.getX(), this.getZ());
 		
 		return true;
 	}
@@ -121,11 +120,11 @@ public class ChunkWrap
 	@Override
 	public int hashCode()
 	{
-		int hash = 3;
-		hash = 19 * hash + (this.world != null ? this.world.hashCode() : 0);
-		hash = 19 * hash + this.x;
-		hash = 19 * hash + this.z;
-		return hash;
+		return Objects.hash(
+			this.getWorld(),
+			this.getX(),
+			this.getZ()
+		);
 	};
 	
 	@Override
@@ -135,7 +134,12 @@ public class ChunkWrap
 		if (!(obj instanceof ChunkWrap)) return false;
 
 		ChunkWrap that = (ChunkWrap) obj;
-		return this.x == that.x && this.z == that.z && ( this.world==null ? that.world==null : this.world.equals(that.world) );
+		
+		return MUtil.equals(
+			this.getX(), that.getX(),
+			this.getZ(), that.getZ(),
+			this.getWorld(), that.getWorld()
+		);
 	}
 	
 }

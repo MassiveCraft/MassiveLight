@@ -1,5 +1,7 @@
 package com.massivecraft.massivelight.cmd;
 
+import java.util.List;
+
 import org.bukkit.Chunk;
 import org.bukkit.World;
 
@@ -11,8 +13,7 @@ import com.massivecraft.massivecore.command.type.primitive.TypeInteger;
 import com.massivecraft.massivelight.ChunkWrap;
 import com.massivecraft.massivelight.Perm;
 import com.massivecraft.massivelight.entity.MConf;
-
-import java.util.List;
+import com.massivecraft.massivelight.Lang;
 
 public class CmdLightFix extends MassiveCommand
 {
@@ -47,25 +48,25 @@ public class CmdLightFix extends MassiveCommand
 		int radius = this.readArg(0);
 		if (radius < 0)
 		{
-			msg("<b>Radius may not be a negative value.");
+			msg(Lang.RADIUS_NEGATIVE_ERROR);
 			return;
 		}
 		if (radius > MConf.get().maxradius)
 		{
-			msg("<b>The maxium radius allowed is <h>%d<b>.", MConf.get().maxradius);
+			msg(Lang.MAX_RADIUS_ALLOWED_IS_X, MConf.get().maxradius);
 			return;
 		}
 		
-		Chunk origin = me.getLocation().getChunk();
+		Chunk origin = this.me.getLocation().getChunk();
 		int originX = origin.getX();
 		int originZ = origin.getZ();
-		World world = me.getWorld();
+		World world = this.me.getWorld();
 		
 		// Pre Inform
 		int side = (1 + radius * 2);
 		int target = side * side;
-		msg("<i>Chunks around you will now be relighted.");
-		msg("<k>Radius <v>%d <a>--> <k>Side <v>%d <a>--> <k>Chunks <v>%d", radius, side, target);
+		msg(Lang.CHUNKS_RELIGHT_PREINFORM_GENERAL);
+		msg(Lang.CHUNK_RELIGHT_PREINFORM_DETAILS, radius, side, target);
 		
 		// Apply
 		for (int deltaX = -radius; deltaX <= radius; deltaX++)
@@ -79,7 +80,7 @@ public class CmdLightFix extends MassiveCommand
 		}
 		
 		// Post Inform
-		msg("<g>Chunk relight complete.");
+		msg(Lang.CHUNK_RELIGHT_DONE);
 	}
 	
 }

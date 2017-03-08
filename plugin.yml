@@ -12,8 +12,8 @@ permissions:
 # -------------------------------------------- #
   massivelight.basecommand: {description: use the MassiveLight base command, default: false}
   massivelight.fix: {description: fix light in nearby chunks, default: false}
-  massivelight.version: {description: see plugin version, default: false}
   massivelight.config: {description: edit config, default: false}
+  massivelight.version: {description: see plugin version, default: false}
 # -------------------------------------------- #
 # STAR NOTATION
 # -------------------------------------------- #
@@ -22,8 +22,8 @@ permissions:
     children:
       massivelight.basecommand: true
       massivelight.fix: true
-      massivelight.version: true
       massivelight.config: true
+      massivelight.version: true
 # -------------------------------------------- #
 # KITS
 # -------------------------------------------- #
