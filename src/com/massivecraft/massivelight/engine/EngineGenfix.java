@@ -1,16 +1,15 @@
 package com.massivecraft.massivelight.engine;
 
-import java.util.HashSet;
-import java.util.Set;
-
+import com.massivecraft.massivecore.Engine;
+import com.massivecraft.massivelight.ChunkWrap;
+import com.massivecraft.massivelight.entity.MConf;
 import org.bukkit.Chunk;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.EventPriority;
 import org.bukkit.event.world.ChunkPopulateEvent;
 
-import com.massivecraft.massivecore.Engine;
-import com.massivecraft.massivelight.ChunkWrap;
-import com.massivecraft.massivelight.entity.MConf;
+import java.util.HashSet;
+import java.util.Set;
 
 public class EngineGenfix extends Engine
 {

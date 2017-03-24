@@ -1,14 +1,13 @@
 package com.massivecraft.massivelight;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Objects;
-
+import com.massivecraft.massivecore.util.MUtil;
+import com.massivecraft.massivelight.nms.NmsMassiveLight;
 import org.bukkit.Chunk;
 import org.bukkit.World;
 
-import com.massivecraft.massivecore.util.MUtil;
-import com.massivecraft.massivelight.nms.NmsMassiveLight;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Objects;
 
 public class ChunkWrap
 {

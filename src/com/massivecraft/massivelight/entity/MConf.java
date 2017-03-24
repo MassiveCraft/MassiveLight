@@ -1,10 +1,10 @@
 package com.massivecraft.massivelight.entity;
 
-import java.util.List;
-
 import com.massivecraft.massivecore.command.editor.annotation.EditorName;
 import com.massivecraft.massivecore.store.Entity;
 import com.massivecraft.massivecore.util.MUtil;
+
+import java.util.List;
 
 @EditorName("config")
 public class MConf extends Entity<MConf>

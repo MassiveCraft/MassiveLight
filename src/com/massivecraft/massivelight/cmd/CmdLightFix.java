@@ -1,19 +1,18 @@
 package com.massivecraft.massivelight.cmd;
 
-import java.util.List;
-
-import org.bukkit.Chunk;
-import org.bukkit.World;
-
 import com.massivecraft.massivecore.MassiveException;
 import com.massivecraft.massivecore.command.MassiveCommand;
 import com.massivecraft.massivecore.command.requirement.RequirementHasPerm;
 import com.massivecraft.massivecore.command.requirement.RequirementIsPlayer;
 import com.massivecraft.massivecore.command.type.primitive.TypeInteger;
 import com.massivecraft.massivelight.ChunkWrap;
+import com.massivecraft.massivelight.Lang;
 import com.massivecraft.massivelight.Perm;
 import com.massivecraft.massivelight.entity.MConf;
-import com.massivecraft.massivelight.Lang;
+import org.bukkit.Chunk;
+import org.bukkit.World;
+
+import java.util.List;
 
 public class CmdLightFix extends MassiveCommand
 {

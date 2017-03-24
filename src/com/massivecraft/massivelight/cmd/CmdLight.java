@@ -1,11 +1,11 @@
 package com.massivecraft.massivelight.cmd;
 
-import java.util.List;
-
 import com.massivecraft.massivecore.command.MassiveCommand;
 import com.massivecraft.massivecore.command.requirement.RequirementHasPerm;
 import com.massivecraft.massivelight.Perm;
 import com.massivecraft.massivelight.entity.MConf;
+
+import java.util.List;
 
 public class CmdLight extends MassiveCommand
 {
