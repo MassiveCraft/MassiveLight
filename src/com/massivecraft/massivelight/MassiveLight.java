@@ -37,6 +37,6 @@ public class MassiveLight extends MassivePlugin
 			// Command
 			CmdLight.class
 		);
-	}   
+	}
 	
 }

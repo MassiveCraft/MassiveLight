@@ -24,7 +24,7 @@ public class EngineGenfix extends Engine
 	// FIELDS
 	// -------------------------------------------- //
 	
-	private Set<ChunkWrap> fixed = new HashSet<ChunkWrap>();
+	private Set<ChunkWrap> fixed = new HashSet<>();
 	public Set<ChunkWrap> getFixed() { return this.fixed; }
 	
 	// -------------------------------------------- //

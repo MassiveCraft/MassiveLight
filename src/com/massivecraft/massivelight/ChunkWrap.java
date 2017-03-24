@@ -46,7 +46,7 @@ public class ChunkWrap
 	
 	public List<ChunkWrap> getSurrounding(boolean includeSelf)
 	{
-		List<ChunkWrap> ret = new ArrayList<ChunkWrap>();
+		List<ChunkWrap> ret = new ArrayList<>();
 		World world = this.getWorld();
 		int xfrom = this.getX() - 1;
 		int xto = this.getX() + 1;
@@ -124,7 +124,7 @@ public class ChunkWrap
 			this.getX(),
 			this.getZ()
 		);
-	};
+	}
 	
 	@Override
 	public boolean equals(Object obj)
