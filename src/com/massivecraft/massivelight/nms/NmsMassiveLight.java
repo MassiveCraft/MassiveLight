@@ -12,6 +12,7 @@ public class NmsMassiveLight extends Mixin
 	// -------------------------------------------- //
 	
 	private static NmsMassiveLight d = new NmsMassiveLight().setAlternatives(
+		NmsMassiveLight112R1.class,
 		NmsMassiveLight111R1.class,
 		NmsMassiveLight110R1.class
 	);
